@@ -1,0 +1,38 @@
+version: '3.7'
+services:
+  db:
+    build: ./db
+    image: mysql:5.7
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    restart: always
+    environment:
+      MYSQL_DATABASE: gaudiy
+      MYSQL_USER: gaudiy
+      MYSQL_PASSWORD: gaudiy
+      MYSQL_ROOT_PASSWORD: gaudiy
+    healthcheck:
+        test: mysqladmin ping -h 127.0.0.1 -u$$MYSQL_USER -p$$MYSQL_PASSWORD
+    ports:
+    - "3306:3306"
+    volumes:
+    - ./db/initdb.d:/docker-entrypoint-initdb.d
+    - ./db/conf.d:/etc/mysql/conf.d
+    - ./db/log/mysql:/var/log/mysql
+    - db:/var/lib/mysql
+
+  server:
+    build: ./server
+    image: gaudiy/server:1.0.0
+    restart: always
+    depends_on: 
+      db:
+        condition: service_healthy
+    command: ["sleep 5"]
+    ports:
+    - "9090:9090"
+    environment:
+      JAR_TARGET: gaudiy-0.0.1-SNAPSHOT.jar
+
+volumes:
+  db:
+    driver: local
