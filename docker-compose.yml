@@ -29,7 +29,7 @@ services:
         condition: service_healthy
     command: ["sleep 5"]
     ports:
-    - "9090:9090"
+    - "8080:8080"
     environment:
       JAR_TARGET: gaudiy-0.0.1-SNAPSHOT.jar
 

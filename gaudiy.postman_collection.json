@@ -20,7 +20,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:9090/userData",
+					"raw": "http://127.0.0.1:8080/userData",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -28,7 +28,7 @@
 						"0",
 						"1"
 					],
-					"port": "9090",
+					"port": "8080",
 					"path": [
 						"userData"
 					]
@@ -51,7 +51,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:9090/register",
+					"raw": "http://127.0.0.1:8080/register",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -59,7 +59,7 @@
 						"0",
 						"1"
 					],
-					"port": "9090",
+					"port": "8080",
 					"path": [
 						"register"
 					]
@@ -74,7 +74,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"userId\": 6,\r\n    \"coin\": 999,\r\n    \"remark\": \"ADD 999 COIN\"\r\n}",
+					"raw": "{\r\n    \"userId\": 1,\r\n    \"coin\": 200,\r\n    \"remark\": \"ADD 200 COIN\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -82,7 +82,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:9090/addCoin",
+					"raw": "http://127.0.0.1:8080/addCoin",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -90,7 +90,7 @@
 						"0",
 						"1"
 					],
-					"port": "9090",
+					"port": "8080",
 					"path": [
 						"addCoin"
 					]
@@ -105,7 +105,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"userId\": 6,\r\n    \"coin\": 100,\r\n    \"remark\": \"USE 100 COIN\"\r\n}",
+					"raw": "{\r\n    \"userId\": 1,\r\n    \"coin\": 100,\r\n    \"remark\": \"USE 100 COIN\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -113,7 +113,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:9090/useCoin",
+					"raw": "http://127.0.0.1:8080/useCoin",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -121,7 +121,7 @@
 						"0",
 						"1"
 					],
-					"port": "9090",
+					"port": "8080",
 					"path": [
 						"useCoin"
 					]
@@ -136,7 +136,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"userId\": 6,\r\n    \"toUserId\": 1,\r\n    \"coin\": 100,\r\n    \"remark\": \"SEND 100 COIN TO 1\",\r\n    \"toRemark\": \"RECEIVED 100 COIN FROM 6\"\r\n}",
+					"raw": "{\r\n    \"userId\": 1,\r\n    \"toUserId\": 2,\r\n    \"coin\": 100,\r\n    \"remark\": \"SEND 100 COIN TO 1\",\r\n    \"toRemark\": \"RECEIVED 100 COIN FROM 2\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -144,7 +144,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:9090/sendCoin",
+					"raw": "http://127.0.0.1:8080/sendCoin",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -152,7 +152,7 @@
 						"0",
 						"1"
 					],
-					"port": "9090",
+					"port": "8080",
 					"path": [
 						"sendCoin"
 					]
@@ -175,7 +175,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:9090/userData",
+					"raw": "http://127.0.0.1:8080/history",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -183,9 +183,9 @@
 						"0",
 						"1"
 					],
-					"port": "9090",
+					"port": "8080",
 					"path": [
-						"userData"
+						"history"
 					]
 				}
 			},
