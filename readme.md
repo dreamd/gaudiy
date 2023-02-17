@@ -21,6 +21,7 @@
 * [docker](https://www.docker.com/)
 * [docker-compose](https://github.com/docker/compose)
 * [MySQL](https://www.mysql.com/)
+* [Postman](https://www.postman.com/)
 
 ### データベース
 
@@ -57,7 +58,7 @@ $ cd gaudiy
 $ docker-compose up -d --build
 ```
 
-#### コンフィグレーション
+### コンフィグレーション
 
 サーバーのコンフィグファイルは
 ```sh
@@ -65,6 +66,12 @@ server\src\main\resources\application.properties
 ```
 
 データベースを設定できます。
+
+
+### テスト
+gaudiy.postman_collection.jsonというファイルをPostManにインポートしたら、
+全部のREST APIもすぐアクセスできるようになりました。
+
 
 ライセンス
 ----
