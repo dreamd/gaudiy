@@ -11,7 +11,6 @@
   - ユーザーIDと消費量を指定することによって、残高から独自コインを指定した分、減らすことができます。
   - Aさん → Bさんへの独自コインの送金も行うことができます。
   - ユーザーIDを指定することによって、今までどんな増加・消費がされたか日時付きで取得することができます。
-  - 筆記試験
 
 ### テック
 
@@ -51,7 +50,7 @@ CREATE TABLE `gaudiy`.`coin_history` (
 
 ### インストール
 
-docker(https://www.docker.com/)とdocker-compose(https://github.com/docker/compose)が必要です。
+docker(https://www.docker.com/) とdocker-compose(https://github.com/docker/compose) が必要です。
 dockerをインストールして、以下のコードで動かして環境はセットアップされます。
 
 ```sh
