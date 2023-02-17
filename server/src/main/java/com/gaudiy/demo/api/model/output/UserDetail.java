@@ -1,28 +1,27 @@
-package com.gaudiy.demo.api.model.db;
-
+package com.gaudiy.demo.api.model.output;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import com.gaudiy.demo.api.model.db.*;
 
-@Entity(name = "User")
-@Table(name = "user")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User implements Serializable {
-
+public class UserDetail implements Serializable {
   private static final long serialVersionUID = 1L;
 
-  public User(String email, Date createTime) {
-    this.email = email;
-    this.createTime = createTime;
+  public UserDetail(User user) {
+      this.id = user.getId();
+      this.email = user.getEmail();
+      this.createTime = user.getCreateTime();
   }
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+
   private long id;
   private String email;
   private Date createTime;

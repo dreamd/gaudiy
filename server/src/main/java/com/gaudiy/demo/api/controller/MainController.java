@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gaudiy.demo.api.handler.main.*;
@@ -23,7 +24,7 @@ public class MainController {
   }
 
   @PostMapping("/register")
-  public String register() {
-    return registerHandler.handle();
+  public String register(@RequestBody Map<String, Object> payload) throws JsonProcessingException {
+    return registerHandler.handle(payload);
   }
 }
