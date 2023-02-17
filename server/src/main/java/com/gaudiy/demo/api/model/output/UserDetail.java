@@ -9,6 +9,8 @@ import java.io.Serializable;
 import java.util.Date;
 import com.gaudiy.demo.api.model.db.*;
 
+
+//ユーザーのデータを反映されるformat
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,12 +19,12 @@ public class UserDetail implements Serializable {
 
   public UserDetail(User user) {
       this.id = user.getId();
-      this.email = user.getEmail();
+      this.coin = user.getCoin();
       this.createTime = user.getCreateTime();
   }
 
-
+  //DBのユーザーと差があると思われるので別のmodelを作った
   private long id;
-  private String email;
+  private long coin;
   private Date createTime;
 }

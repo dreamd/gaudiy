@@ -14,12 +14,14 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+//json変換用の方法
 @SuppressWarnings("unchecked")
 @Component
 public class JsonMapper {
 
   private final ObjectMapper mapper;
 
+  //json変換の設定
   public JsonMapper() {
     mapper = new ObjectMapper();
     mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -28,10 +30,12 @@ public class JsonMapper {
     mapper.registerModule(new SimpleModule());
   }
 
+  //objectからjson stringに変換
   public String write(Object o) throws JsonProcessingException {
     return mapper.writeValueAsString(o);
   }
 
+  //json stringからobjectに変換
   public <T> T read(String jsonString, TypeReference<T> typeReference) throws JsonProcessingException {
     return mapper.readValue(jsonString, typeReference);
   }

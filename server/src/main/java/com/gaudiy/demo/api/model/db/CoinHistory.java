@@ -7,28 +7,30 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
-//ユーザーのClassを設定する
-@Entity(name = "User")
-@Table(name = "user")
+//コインの記録のClassを設定する
+@Entity(name = "CoinHistory")
+@Table(name = "coin_history")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User implements Serializable {
+public class CoinHistory implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
-  public User(String email, long coin, Date createTime) {
-    this.email = email;
+  public CoinHistory(long userId, long coin, String remark, Date createTime) {
+    this.userId = userId;
     this.coin = coin;
+    this.remark = remark;
     this.createTime = createTime;
   }
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  //必要なのはid, coin
-  //emailはこのmirco serviceをつかうシステムからのkey
+  //必要なのはuserId, coin, createTime
+  //remarkはこのmirco serviceをつかうシステムでの検索用
   private long id;
-  private String email;
+  private long userId;
   private long coin;
+  private String remark;
   private Date createTime;
 }
