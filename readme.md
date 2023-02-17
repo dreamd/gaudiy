@@ -41,11 +41,9 @@ CREATE TABLE `gaudiy`.`coin_history` (
   `user_id` INT NOT NULL,
   `coin` INT NOT NULL,
   `remark` VARCHAR(255) NOT NULL,
-  `create_time` DATETIME NULL,
+  `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   INDEX `INDEX` (`user_id` ASC, `create_time` ASC));
-
-
 ```
 
 ### インストール
