@@ -95,6 +95,10 @@ gaudiy.postman_collection.jsonというファイルをPostManにインポート�
     RSAされたAESキーを返却して復号化するとレスポンスヘダーにRSA SIGN VERIFYという改竄チェックは保護できると思いますが、
     必ず守れることはないですが、技術も持っていない人に十分です。
 
+  - DB負荷の減らすために、データをキャッシュすることも必要です。
+    Redisやmemcachedなどの3rdパーティーツールを使ったら、
+    必要じゃないのDB接続はなくなりました。
+
   - デプロイについて、
     GITのbranchを利用して、タスクのcommitをmergeして、テストして、GitHubのCI/CDと連携したら、mergeされたcommitをTagをつけて、そういう方法でデプロイするのはおすすめです。
     デプロイを始めたら、
